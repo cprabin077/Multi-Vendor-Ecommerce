@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     # Django Apps
     'rest_framework',
+    'drf_spectacular',
 
     # Local Apps
     'apps.accounts',
@@ -51,6 +52,24 @@ INSTALLED_APPS = [
     'apps.payments',
     'apps.dashboard',
 ]
+
+# drf_spectacular
+REST_FRAMEWORK = {
+    # YOUR SETTINGS
+
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+    # 'DEFAULT_AUTHENTICATION_CLASSES': (
+    #     'rest_framework_simplejwt.authentication.JWTAuthentication',
+    # )
+}
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Multi Vendor E-Commerce',
+    'DESCRIPTION': 'E-Commerce Platform',
+    'VERSION': '1.0.0',
+    'SERVE_INCLUDE_SCHEMA': False,
+    # OTHER SETTINGS
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
