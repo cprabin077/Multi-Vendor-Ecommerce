@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'drf_spectacular',
 
     # Local Apps
-    'apps.accounts',
+    'apps.user',
     'apps.vendors',
     'apps.products',
     'apps.categories',
@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'apps.payments',
     'apps.dashboard',
 ]
+
 
 # drf_spectacular
 REST_FRAMEWORK = {
