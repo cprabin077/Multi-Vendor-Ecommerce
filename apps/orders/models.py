@@ -3,13 +3,12 @@ from django.contrib.auth.models import User
 
 from apps.products.models import Product
 
-ORDER_STATUS = (
-    ("pending", "Pending"),
-    ("processing", "Processing"),
-    ("shipped", "Shipped"),
-    ("delivered", "Delivered"),
-    ("cancelled", "Cancelled"),
-)
+class OrderStatus(models.TextChoices):
+    PENDING = "Pending"
+    PROCESSING = "Processing"
+    SHIPPED = "Shipped"
+    DELIVERED = "Delivered"
+    CANCELLED = "Cancelled"
 
 
 class Order(models.Model):
@@ -17,7 +16,7 @@ class Order(models.Model):
 
     total_amount = models.DecimalField(max_digits=10, decimal_places=2, default=0)
 
-    status = models.CharField(max_length=20, choices=ORDER_STATUS, default="pending")
+    status = models.CharField(max_length=20, choices=OrderStatus.choices, default="pending")
 
     shipping_address = models.TextField()
 

@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     # Django Apps
     'rest_framework',
     'drf_spectacular',
+    'rest_framework.authtoken',
 
     # Local Apps
     'apps.user',
@@ -63,6 +64,9 @@ REST_FRAMEWORK = {
     #     'rest_framework_simplejwt.authentication.JWTAuthentication',
     # )
 }
+
+
+
 
 SPECTACULAR_SETTINGS = {
     'TITLE': 'Multi Vendor E-Commerce',
@@ -148,3 +152,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
+
+# Khalti Payment
+KHALTI_SECRET_KEY = "4abe3a939cf24203909acb144685dcd6"
